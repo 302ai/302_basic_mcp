@@ -11,9 +11,10 @@
 ## インターフェースプレビュー
 以下は使用例です
 ![](docs/302_basic_mcp_jp_screenshot_01.png)    
+![](docs/302_basic_mcp_jp_screenshot_02.png)
 
 以下は利用可能なツールリストです
-![](docs/302_basic_mcp_jp_screenshot_02.png)
+![](docs/302_basic_mcp_jp_screenshot_03.png)
 
    
 
@@ -27,7 +28,7 @@
 - コード実行
 - ウェブ検索
 - ファイル解析
-
+- Webページのアップロード
 
 ## 開発
 
@@ -109,7 +110,7 @@ ChatWiseで使用するには、以下の内容をクリップボードにコピ
 ```
 
 設定->ツール->追加ボタン->クリップボードからインポートを選択
-![](docs/302_basic_mcp_jp_screenshot_03.png)
+![](docs/302_basic_mcp_jp_screenshot_04.png)
 
 ### [ここ](https://dash.302.ai/apis/list)で302AI_API_KEYを取得してください
 [使用チュートリアル](https://help.302.ai/jp/docs/API-guan-li)

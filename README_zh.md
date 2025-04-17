@@ -11,9 +11,10 @@
 ## 界面预览
 以下是使用示例
 ![](docs/302_basic_mcp_screenshot_01.png)     
+![](docs/302_basic_mcp_screenshot_02.png)   
 
 以下是支持使用的工具列表
-![](docs/302_basic_mcp_screenshot_02.png)     
+![](docs/302_basic_mcp_screenshot_03.png)     
    
 
 ## ✨ 功能特性 ✨
@@ -26,7 +27,7 @@
 - 执行代码
 - 联网搜索
 - 文件解析
-
+- 上传网页
 
 ## 开发
 
@@ -107,7 +108,7 @@ On Windows: `%APPDATA%/Claude/claude_desktop_config.json`
 }
 ```
 在设置->工具->添加按钮->选择从剪贴板导入
-![](docs/302_basic_mcp_screenshot_03.png)
+![](docs/302_basic_mcp_screenshot_04.png)
 
 ### 在[这里](https://dash.302.ai/apis/list)获取您的302AI_API_KEY
 [使用教程](https://help.302.ai/docs/API-guan-li)
