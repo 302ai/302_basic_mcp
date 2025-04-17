@@ -12,10 +12,10 @@
 
 Here are some usage examples
 ![](docs/302_basic_mcp_en_screenshot_01.png)     
-   
+![](docs/302_basic_mcp_en_screenshot_02.png) 
 
 Here is the list of supported tools
-![](docs/302_basic_mcp_en_screenshot_02.png)     
+![](docs/302_basic_mcp_en_screenshot_03.png)     
 
 
 ## ✨ Features ✨
@@ -30,6 +30,8 @@ Here is the list of supported tools
 - Code Execution
 - Web Search
 - File Parser
+- Upload webpage
+
 
 
 ## Development
@@ -112,7 +114,7 @@ To use with ChatWise, copy the following content to clipboard
 ```
 
 Go to Settings -> Tools -> Add button -> Select Import from Clipboard
-![](docs/302_basic_mcp_en_screenshot_03.png)
+![](docs/302_basic_mcp_en_screenshot_04.png)
 
 ### Find Your 302AI_API_KEY [here](https://dash.302.ai/apis/list)
 [Using Tutorials](https://help.302.ai/en/docs/API-guan-li)
