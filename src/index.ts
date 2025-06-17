@@ -37,12 +37,21 @@ class AI302Api {
     return this.apiKey;
   }
 
-  async listTools(): Promise<Tool[]> {
+  async listTools(language?: string): Promise<Tool[]> {
+    const url = new URL(`${this.baseUrl}/v1/tool/api-key`);
+
+    url.searchParams.append("apiKey", "basic");
+
+    if (language) {
+      url.searchParams.append("lang", language);
+    }
+
     const { data, error } = await betterFetch<{
       tools: Tool[];
-    }>(`${this.baseUrl}/list-tools/basic`, {
+    }>(url.toString(), {
       headers: {
         Authorization: `Bearer ${this.apiKey}`,
+        "x-api-key": this.apiKey,
       },
     });
 
@@ -56,9 +65,9 @@ class AI302Api {
     return data.tools;
   }
 
-  async callTool(name: string, arguments_: any): Promise<ToolCallResponse> {
-    const { data, error } = await betterFetch<ToolCallResponse>(
-      `${this.baseUrl}/call-tool/${name}`,
+  async callTool(name: string, arguments_: any): Promise<any> {
+    const { data, error } = await betterFetch<any>(
+      `${this.baseUrl}/v1/tool/call`,
       {
         method: "POST",
         headers: {
@@ -66,6 +75,7 @@ class AI302Api {
           "x-api-key": this.apiKey,
         },
         body: {
+          nameOrId: name,
           arguments: arguments_,
         },
       },
@@ -90,7 +100,7 @@ class AI302Server {
     this.server = new Server(
       {
         name: "302ai-basic-mcp",
-        version: "0.1.0",
+        version: "0.1.1",
       },
       {
         capabilities: {
@@ -148,7 +158,7 @@ class AI302Server {
 
     this.server.setRequestHandler(CallToolRequestSchema, async (request) => {
       const api = this.getApiInstance(request);
-      const { result, logs } = await api.callTool(
+      const content = await api.callTool(
         request.params.name,
         request.params.arguments,
       );
@@ -157,7 +167,7 @@ class AI302Server {
         content: [
           {
             type: "text",
-            text: JSON.stringify({ result, logs }, null, 2),
+            text: JSON.stringify({ content }, null, 2),
           },
         ],
       };
